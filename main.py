@@ -19,21 +19,3 @@ for teste in testes:
     print(f"'{teste}' = '{rua}', '{numero}'")
 
 
-# Caso complicado
-def str_endereco(endereco):
-    parte_endereco = endereco.split()  # Divide o endereço
-    nome_rua = ''
-    numero_rua = ''
-
-    for i, parte_endereco in enumerate(parte_endereco):
-          if parte_endereco.isdigit() or (parte_endereco[0].isdigit() and i > 0 and not parte_endereco[i-1].isdigit()):  # Espaço núm/letra
-            numero_rua = parte_endereco
-          else: # Se não for um número
-                nome_rua += parte_endereco + ' '
-          return nome_rua.strip(), numero_rua
-
-testes = ["Rio Branco 23", "Quirino dos Santos  23 b"]
-
-for teste in testes:
-  rua, numero = str_endereco(teste)
-  print(f"'{teste}' = '{rua}', '{numero}'")
