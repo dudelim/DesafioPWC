@@ -1,9 +1,13 @@
-from flask import Flask
+# Caso simples:
+def str_endereco(endereco):
+  parte_endereco = endereco.split()
+  nome_rua = ''
+  numero_rua = ''
 
-app = Flask('app')
+  for i in parte_endereco:
+      if i.isdigit():  
+          numero_rua = parte_endereco
+      else:  
+          nome_rua += parte_endereco + ' '  
 
-@app.route('/')
-def hello_world():
-  return 'Hello, World!'
-
-app.run(host='0.0.0.0', port=8080)
+  
